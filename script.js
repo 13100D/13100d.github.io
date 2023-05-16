@@ -2,7 +2,7 @@ const textElement = document.getElementById('animated-text');
 const phrases = ['S', 'Se', 'Seg','Segg','Seggs'];
 
 let index = 0;
-let delay = 16; // Delay in milliseconds between each animation frame
+let delay = 250; // Delay in milliseconds between each animation frame
 
 function animateText() {
   textElement.textContent = phrases[index];
