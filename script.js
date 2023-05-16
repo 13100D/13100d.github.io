@@ -10,6 +10,7 @@ function animateText() {
       i=5;
   }
   index = (index + i) % phrases.length;
+  i=1;
   setTimeout(animateText, delay);
   
 }
