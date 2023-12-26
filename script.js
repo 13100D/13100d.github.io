@@ -1,16 +1,12 @@
 const textElement = document.getElementById('animated-text');
-const phrases = ['S', 'Se', 'Seg','Segg','Seggs','Seggs','Seggs','Seggs.','Seggs..','Seggs...','Seggs...','Seggs...'];
+const frames = ['S', 'Se', 'Seg','Segg','Seggs','Seggs','Seggs','Seggs.','Seggs..','Seggs...','Seggs...','Seggs...'];
 
 let index = 0;
-let delay = 250; // Delay in milliseconds between each animation frame
+let delay = 66; // Delay in milliseconds = 1000/15 to give 15 fps
 let i=1;
 function animateText() {
-  textElement.textContent = phrases[index];
-  if (index==phrases.length-1){
-      i=5;
-  }
+  textElement.textContent = frames[index];
   index = (index + i) % phrases.length;
-  i=1;
   setTimeout(animateText, delay);
   
 }
