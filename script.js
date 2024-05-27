@@ -9,14 +9,21 @@ analyzeButton.addEventListener('click', function() {
     return;
   }
 
+  const debugText = document.createElement('pre');
+  debugText.id = "debugOutput";
+  debugText.textContent = "Selected file: " + dataFile.name;
+  resultDiv.appendChild(debugText);
+
   const reader = new FileReader();
   reader.onload = function(event) {
     const data = event.target.result;
     try {
       const courseData = JSON.parse(data);
+      debugText.textContent += "\nParsed course data: \n" + JSON.stringify(courseData, null, 2); // Pretty-print JSON
       const coursesWithGrades = analyzeCourses(courseData);
       displayResults(coursesWithGrades);
     } catch (error) {
+      debugText.textContent += "\nError parsing JSON: " + error.message;
       displayError("Invalid JSON data in uploaded file!");
     }
   };
