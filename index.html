@@ -6,13 +6,12 @@
   <title>Course Grade Analyzer</title>
 </head>
 <body>
-  <h1>Course Grade Analyzer-2</h1>
-  <form id="analyzeForm">
-    <label for="data">Enter your course data (JSON format):</label>
-    <textarea name="data" id="data" rows="10" cols="50"></textarea>
-    <br>
-    <button type="submit">Analyze</button>
-  </form>
+  <h1>Course Grade Analyzer-3</h1>
+  <div id="dataUpload">
+    <label for="dataFile">Upload your course data (JSON file):</label>
+    <input type="file" id="dataFile" accept=".json">
+    <button type="button" id="analyzeButton">Analyze</button>
+  </div>
   <div id="result"></div>
   <script src="script.js"></script>
 </body>
