@@ -23,4 +23,26 @@ analyzeButton.addEventListener('click', function() {
   reader.readAsText(dataFile);
 });
 
-// ... rest of the code for analyzeCourses, displayResults, and displayError functions (same as before)
+function analyzeCourses(data) {
+  const courses = [];
+  for (const courseData of data) {
+    const courseName = courseData.syllabusCourse.code;
+    const gradeInfo = courseData.forcedGrade; // Check for forced grade
+    const grade = gradeInfo ? gradeInfo.code : "Ungraded";
+    courses.push([courseName, grade]);
+  }
+  return courses;
+}
+
+function displayResults(courses) {
+  let resultHtml = "<h2>Course Grades</h2><ul>";
+  for (const course of courses) {
+    resultHtml += `<li>Course Name: ${course[0]}, Grade: ${course[1]}</li>`;
+  }
+  resultHtml += "</ul>";
+  resultDiv.innerHTML = resultHtml;
+}
+
+function displayError(errorMessage) {
+  resultDiv.innerHTML = `<p class="error">Error: ${errorMessage}</p>`;
+}
