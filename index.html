@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-  </head>
-  <body>
-    <main>
-        <link rel="stylesheet" href="styles.css">
-        <div id="animation-container">
-        <span id="animated-text"></span>
-        </div>
-      <script src="script.js"></script>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Grade Analyzer</title>
+</head>
+<body>
+  <h1>Course Grade Analyzer</h1>
+  <form method="POST">
+    <label for="data">Enter your course data (JSON format):</label>
+    <textarea name="data" id="data" rows="10" cols="50"></textarea>
+    <br>
+    <button type="submit">Analyze</button>
+  </form>
+</body>
 </html>
